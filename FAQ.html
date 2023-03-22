@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+	* {
+	  box-sizing: border-box;
+	}
+	*::before, *::after {
+	  box-sizing: border-box;
+	}
+
+	body {
+	  margin: 0;
+	  padding: 0;
+	  font-family: "Open+Sans", sans-serif;
+	  font-weight: 500;
+	  font-size: 1.1em;
+	  line-height: 135%;
+	  background: #fff;
+	  color: #003300;
+	  display: flex;
+	  background-image: url('https://www.dropbox.com/s/3np89ks0ti2eq8f/PaperboardBackground.jpg?dl=0');
+	}
+	
+	b {
+		font-family: "Open+Sans", sans-serif;
+		font-weight: 600;
+	}
+	
+	a {
+		color: #117711;
+	}
+	
+	a:visited{
+		color: #006600;
+	}
+
+	.container {
+		margin: 0 2% 2% 2%;
+		position: absolute;
+		top: 72px;
+		bottom: 0;
+	}
+
+	.accordion .accordion-item {
+	  border-bottom: 1px solid #e5e5e5;
+	}
+	.accordion .accordion-item button[aria-expanded=true] {
+	  border-bottom: 1px solid #003700;
+	}
+	.accordion button {
+	  position: relative;
+	  display: block;
+	  text-align: left;
+	  width: 100%;
+	  padding: 1em 30px;
+	  color: #112211;
+	  font-size: 1.15rem;
+	  font-weight: 600;
+	  border: none;
+	  background: none;
+	  outline: none;
+	}
+	.accordion button:hover, .accordion button:focus {
+	  cursor: pointer;
+	  color: #005500;
+	}
+	.accordion button:hover::after, .accordion button:focus::after {
+	  cursor: pointer;
+	  color: #03b5d2;
+	  border: 1px solid #03b5d2;
+	}
+	.accordion button .accordion-title {
+	  padding: 1em 1.5em 1em 0;
+	}
+	.accordion button .icon {
+	  display: inline-block;
+	  position: absolute;
+	  top: 18px;
+	  left: 0;
+	  width: 22px;
+	  height: 22px;
+	  border: 1px solid;
+	  border-radius: 22px;
+	}
+	.accordion button .icon::before {
+	  display: block;
+	  position: absolute;
+	  content: "";
+	  top: 9px;
+	  left: 5px;
+	  width: 10px;
+	  height: 2px;
+	  background: currentColor;
+	}
+	.accordion button .icon::after {
+	  display: block;
+	  position: absolute;
+	  content: "";
+	  top: 5px;
+	  left: 9px;
+	  width: 2px;
+	  height: 10px;
+	  background: currentColor;
+	}
+	.accordion button[aria-expanded=true] {
+	  color: #004400;
+	}
+	.accordion button[aria-expanded=true] .icon::after {
+	  width: 0;
+	}
+	.accordion button[aria-expanded=true] + .accordion-content {
+	  opacity: 1;
+	  max-height: 20em;
+	  transition: all 200ms linear;
+	  will-change: opacity, max-height;
+	}
+	.accordion .accordion-content {
+	  opacity: 0;
+	  max-height: 0;
+	  overflow: hidden;
+	  transition: opacity 200ms linear, max-height 200ms linear;
+	  will-change: opacity, max-height;
+	  color: #001100;
+	}
+	.accordion .accordion-content p {
+	  font-size: 1.1rem;
+	  font-weight: 400;
+	  margin: 1em 0;
+	}
+	.navbar {
+		font-size: 2em;
+		font-weight: 400;
+		color: white;
+		background-color: #003700 !important;
+		height: 70px;
+		width: 100%;
+		position: absolute;
+	}
+	.navbar span{
+		position: absolute;
+		top: 20px;
+		left: 120px;
+		right: 120px;
+		text-align: center;
+	}
+	
+	.networkname{
+		font-family:monospace;
+		font-weight:bold;
+	}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<header>
+		<div class="navbar">
+			<a href="https://camptheriversedge.com">
+				<img src="https://www.dropbox.com/s/n5nveuj3d2jx92o/TRELogo_NavBar_100pxH2.png?dl=0" height="30" alt="Small The River&#39;s Edge Logo" style="margin:20px">
+			</a>
+			<span>River's Edge Wi-Fi</span>
+		</div>
+	</header>
+	<div class="container">
+		<p>
+		Free Wi-Fi has been available at the River's Edge since 2012. Our local service provider, ElbertonNET, originally installed 21 independant hotspots that were distributed around the campground in an attempt to provide coverage throughout. As sites were added and upgraded over the years, the tin roofs blocked and reflected Wi-Fi signals in unpredictable ways, so the original distribution of hotspots no longer met our coverage needs. ElbertonNET, is also primarily a residential service provider, so their equipment was not intended for the ever-growing number of devices being used across the campground. Staring in 2021, the decision was made to drop the previous system of independant hotspots, instead upgrading to an enterprise-grade, centrally managed, system that provides roaming coverage across the campground.</p> 
+	  <h2>Frequently Asked Questions</h2>
+	  <div class="accordion">
+		<div class="accordion-item">
+		  <button id="accordion-button-1" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">How can I get technical support for a problem I'm having with Wi-Fi?</span></button>
+		  <div class="accordion-content">
+			<p>Send an email to: <i class="fa-regular fa-envelope"></i> <a href="mailto:wifi@camptheriversedge.com?subject=Wi-Fi Support">wifi@camptheriversedge.com</a>.<br />
+			Make sure to include information on where you are located within the campground, and provide as much detail as you can about the device that you're using, such as type (phone, laptop, media), brand, etc.</p>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <button id="accordion-button-2" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">What network name should I connect to?</span></button>
+		  <div class="accordion-content">
+			<p><i class="fa-solid fa-wifi"></i> <span class="networkname">RiversEdge_Guest</span> is our public network available to all members.<br />
+			<i class="fa-solid fa-wifi"></i> <span class="networkname">RiversEdge_Annual</span> is the password protected network available to annual-site holders.<p>
+			<p><i>Why do annual site holders get their own network?</i><br />
+			Our internet service provider, ElbertonNET, currently only offers network speeds of 200mbps/download and 20mbps/upload. Our network gateway supports two seperate internet connections, so by splitting traffic across two networks we're able to double our capacity, and better load balance our network traffic.</p>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <button id="accordion-button-4" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">Does coverage extend to all areas of the campground?</span></button>
+		  <div class="accordion-content">
+			<p>Currently all sites north of Red Light [site 111] are covered, as well as tent sites 11E-15E and all rental cabins along the southern creek. We will eventually expand coverage to all electrical tent sites, but we have not yet established a time table for that expansion.</p>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <button id="accordion-button-5" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">What speeds can I expect?</span></button>
+		  <div class="accordion-content">
+			<p>Individual guest devices are limited to a rate of 20mbps/download and 2mbps/upload speed, well within the needs of all current 1080p video streaming services. All guests will be sharing a total site capacity of 200mbps download and 20 mbps upload (the current limit of our internet service provider), so based on overall guest traffic, individual speeds may vary. The equipment we are currently using is considered enterprise-grade with a throughput rate of 3 gbps, which means that the impact of sharing bandwidth across many users is minimized as much as possible. We are expecting upgraded capacity by our ISP in the near future, at such time the individual download/upload limits will be re-evaluated to determine if any expansion is possible.</p>
+			<p>Because of our low upload speeds, things like video conferencing may be impacted during very busy event weekends. We ask that guests not engage in any Live video uploads such as Facebook-Live, Youtube-Live, Twitch, etc.</p>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <button id="accordion-button-6" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">Why do I only see two bars of signal strength?</span></button>
+		  <div class="accordion-content">
+			<p>Our Wi-Fi equipment utilizes a system called Beam Forming. Our access points have multiple radios, with one dedicated to providing a constant signal of a fixed strength that quickly reduces in power within a few feet of the access point, but when a connection starts transferring traffic, additional radios are focused in the direction of the device exchanging the data. This means that the number of bars is not a reliable gague of network strength, as once your device starts transfering a large amount of data the signal strength will dynamically increase.</p>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <button id="accordion-button-7" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">Is it secure?</span></button>
+		  <div class="accordion-content">
+			<p><i class="fa-solid fa-wifi"></i> <span class="networkname">RiversEdge_Guest</span> is an Open network. This means that no password is required to connect to the network, but this also means that the traffic between an individual device and any one of our wireless access points is not encrypted, <b>but</b> the vast majority of internet traffic is now site-to-device encrypted so the need for access point to device encryption is not as important. To mitigate the lack of encryption, all network traffic traveling across our network is isolated at the device level. This means that one device on our public network does not have access to any other device. Our network is also behind a very advanced security gateway that provides very tight firewall and traffic security from both outside of our network and also from within our network. If a device connected to our network is determined to be infected with a virus or be trying to hack other devices, it will be automatically identified and further isolated. The logic by which this is determined is updated frequently from our equipment provider. We are also awaiting a new standard on the horizon called "Secure Open" which will introduce encryption yet still not require a password to join the network.</p>
+			<p><i class="fa-solid fa-wifi"></i> <span class="networkname">RiversEdge_Annual</span> is a WPA2/WPA3 encrypted network. This means that all traffic between any given device and our access points is always encrypted. To allow support for shared devices like printers and smart home equipment, devices are not isolated from one another. This means that one device may connect to other devices on the internal network. Modern operating systems have their own firewall software to limit what information can be accessed by other devices on the same network, so just because your device may be visable on the network, does not mean that other devices have access to your information.</p>
+			<p><i>If you are concerned about security on our network, or any network, you should look into utilizing VPN software. VPN software creates an encrypted tunnel directly between your device and your VPN provider that will ensure both security and privacy.</i></p>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <button id="accordion-button-8" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">What about privacy?</span></button>
+		  <div class="accordion-content">
+			<p>For our own planning purposes, our gateway collects metadata about devices that connect to our network including what sites are being accessed, when each device accesses a given site, and the amount of data transfered, <b>but we do not have access to any data that  devices exchange with those sites</b>. So for example, we might know that a given device exchanged X megabytes of data with the Bank of America website, but we have no visibility into the data itself. Likewise, we are not able to view any direct/private messages that you exchange with other users via any website or phone app. Metadata is retained for a maximum of 30 days and may be subpoenaed by a court of law.</p>
+			<p>There are currently two network administrators for our network. Zac Morris[ <i class="fa-regular fa-envelope"></i> <a href="mailto:zac@zacwolf.com.com">zac@zacwolf.com</a> ] and Gene Brown[ <i class="fa-regular fa-envelope"></i> <a href="mailto:gene.brown@morrisbb.net">gene.brown@morrisbb.net</a> ]. They, and only they, have the ability to view the metadata that we collect. For planning purposes, we do aggregate this information into a list of <i>Top Traffic Sites</i> that is shared with board members during quarterly meetings, but this list does not identify any individual devices/users. Both Zac and Gene are dedicated IT professionals and take your privacy very seriously, so we do not share any personal information about our users with anyone, barring direct legal action.</p>
+			<p>The equipment that we use for our Wi-Fi network is completely seperate from the network used by our front-office which prevents personal membership/payment data from being leaked via our Wi-Fi network.</p>
+			<p><i>If you are concerned about privacy on our network, or any network, you should look into utilizing VPN software. VPN software creates an encrypted tunnel directly between your device and your VPN provider that will ensure both security and privacy.</i>
+			</p>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <button id="accordion-button-9" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">Is there content that I can not access?</span></button>
+		  <div class="accordion-content">
+			<p>At this time the only specific data restriction in place is that all data going into and out of Russia is being blocked. We currently have no content restrictions regarding adult content but common Torrent ports are being blocked. We will be introducing a Guest Portal that requires all devices joining the network to accept a Terms-of-Service that will define the liability of the River's Edge as that of a service provider under SB-538, meaning any access of illegal content will be the individual responsibility of the owner of any device that accesses such content. 
+			</p>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <button id="accordion-button-10" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">Why do I keep getting cut off when making voice calls?</span></button>
+		  <div class="accordion-content">
+			<p>If your phone is set to utilize "Wi-Fi assist for voice calls" [this can be changed in the settings for your phone] and your are connected to the public network, you may see your voice calls being cut off if you happen to be roaming across the campground. As you approach the border of two or more access points, your phone may drop the call when your phone determines that the strength of one access point is stronger and automatically switches you from one access point to another. This is unfortunately a known problem with utilizing an Open network like ours. When we are able to impliment a "WPA3 Secure Open" network, this issue will be resolved, as this protocol works to seemlessly "hand-off" traffic from one access point to another. Until we are able to migrate to this upcomming standard, support of "Wi-Fi Assist for voice calls" may not be supported when roaming across the campground.
+			</p>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <button id="accordion-button-11" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">Why can't I get Wi-Fi signal inside my camper?</span></button>
+		  <div class="accordion-content">
+			<p>The metal shell of campers acts as a faraday-cage, blocking or interfering with Wi-Fi signals. There are many factors that affect the level of sheilding being done by your camper, the largest being grounding. If your camper is connected to ground with anything other than non-conductive surfaces (like tires) and plastic/rubber pads under jacks/lifts, then signals from small devices like <i>stick</i> media players may be prevented from reaching our network. Beacon devices are available for purchase at the front-office for $150. These devices have special antennas that receive signal from outside the camper and repeat it inside the camper, allowing small devices to transfer data.</p>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <button id="accordion-button-12" aria-expanded="false"><span class="icon" aria-hidden="true"></span><span class="accordion-title">Where can I get information about any outages?</span></button>
+		  <div class="accordion-content">
+			<p>Information about any planned or unplanned outages are posted to the "Members of the River's Edge" Facebook group.</p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script></script>
+	<script type="text/javascript">
+		const items = document.querySelectorAll(".accordion button");
+
+		function toggleAccordion() {
+		  const itemToggle = this.getAttribute('aria-expanded');
+		  
+		  for (i = 0; i < items.length; i++) {
+			items[i].setAttribute('aria-expanded', 'false');
+		  }
+		  
+		  if (itemToggle == 'false') {
+			this.setAttribute('aria-expanded', 'true');
+		  }
+		}
+
+		items.forEach(item => item.addEventListener('click', toggleAccordion));
+    </script>
+</body>
+</html>
