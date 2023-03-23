@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+* {
+  box-sizing: border-box;
+  /* overflow-y: auto; */
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Open+Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.1em;
+  line-height: 135%;
+  background: #fff;
+  color: #003300;
+  background-image: url('https://github.com/ZacWolf/RiversEdgeWifiFAQ/blob/main/PaperboardBackground.jpg?raw=true');
+}
+
+
+b {
+	font-family: "Open+Sans", sans-serif;
+	font-weight: 600;
+}
+
+a {
+	color: #117711;
+}
+
+a:visited{
+	color: #006600;
+}
+
+.navbar {
+	font-size: 1.75rem;
+	font-weight: 400;
+	color: white;
+	background-color: #003700 !important;
+	height: 70px;
+	width: 100%;
+	position: fixed;
+}
+.navbar span{
+	position: absolute;
+	top: 20px;
+	left: 120px;
+	right: 120px;
+	text-align: center;
+}
+
+.map{
+	max-width: 30%;
+	min-width: 150px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 70%;
+}
+
+.container {
+	position: absolute;
+	top: 70px;
+	bottom: 0;
+}
+
+.container .content {
+	direction: rtl;
+	overflow-y: auto;
+	min-height: 100%;
+	height: 100%;
+}
+.container .content .inner{
+	direction: ltr;
+	margin: 0 32% 0 2%;
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion .accordion-item button[aria-expanded=true] {
+  border-bottom: 1px solid #003700;
+}
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 30px;
+  color: #112211;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover, .accordion button:focus {
+  cursor: pointer;
+  color: #005500;
+}
+.accordion button:hover::after, .accordion button:focus::after {
+  cursor: pointer;
+  color: #03b5d2;
+  border: 1px solid #03b5d2;
+}
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded=true] {
+  color: #004400;
+}
+.accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 25em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+  color: #001100;
+}
+.accordion .accordion-content p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 1em 0;
+}
+
+
+.networkname{
+	font-family:monospace;
+	font-weight:bold;
+}
