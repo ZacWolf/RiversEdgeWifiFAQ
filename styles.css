@@ -66,13 +66,13 @@ a:visited{
 	bottom: 0;
 }
 
-.container .content {
+.content {
 	direction: rtl;
 	overflow-y: auto;
 	min-height: 100%;
 	height: 100%;
 }
-.container .content .inner{
+.content .inner{
 	direction: ltr;
 	margin: 0 32% 0 2%;
 }
